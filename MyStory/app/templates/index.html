@@ -1,0 +1,20 @@
+{% extends "nav.html" %} {% block content %} {% load humanize %}
+<div>
+  <div>
+    <!-- Blog Entries Column -->
+    <div>
+      {% for post in post_list %}
+      <div>
+        <h3>{{ post.title }}</h3>
+        <small
+          >Author: {{ post.author.first_name }} {{ post.author.last_name }} - {{post.updated_on|naturaltime}}</small
+        >
+        <p>{{post.content|slice:":500"|linebreaks }}</p>
+        <a href="{% url 'post_detail' post.slug  %}"> View full post &rarr;</a>
+      </div>
+      <hr />
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{%endblock%}

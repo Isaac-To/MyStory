@@ -1,0 +1,51 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
+.logo {
+  font-size: large;
+  font-weight: bold;
+}
+
+.nav-content {
+  padding: 1% 1% 2% 1%;
+}
+
+.content {
+  margin-top: 6%;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 100vw;
+}
+
+#returntotop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: block;
+  color: rgb(255, 255, 255);
+  transition: 0.2s;
+  padding: 0.5% 1%;
+  border: none;
+}
