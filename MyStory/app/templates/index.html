@@ -1,20 +1,22 @@
 {% extends "nav.html" %} {% block content %} {% load humanize %}
 <div>
   <div>
-    <!-- Blog Entries Column -->
+    {% for post in post_list %}
     <div>
-      {% for post in post_list %}
-      <div>
+      {% if post.image %}
+      <img src="{{ post.image.url|slice:'4:' }}"/>
+      {% endif %}
+      <div class="content-text">
         <h3>{{ post.title }}</h3>
         <small
-          >Author: {{ post.author.first_name }} {{ post.author.last_name }} - {{post.updated_on|naturaltime}}</small
+          >Author: {{ post.author.first_name }} {{ post.author.last_name }} -
+          {{post.updated_on|naturaltime}}</small
         >
         <p>{{post.content|slice:":500"|linebreaks }}</p>
         <a href="{% url 'post_detail' post.slug  %}"> View full post &rarr;</a>
       </div>
-      <hr />
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </div>
 {%endblock%}

@@ -1,11 +1,16 @@
 {% extends 'nav.html' %} {% block content %} {% load humanize %}
 <div>
-  <h3>{% block title %} {{ object.title }} {% endblock title %}</h3>
-  <small
-    >Author: {{ post.author.first_name }} {{ post.author.last_name }} | Created: {{ post.created_on }} | Last Updated:
-    {{ post.updated_on }} - {{ post.updated_on|naturaltime }}</small
-  >
-  <p>{{ object.content|linebreaks }}</p>
+  {% if post.image %}
+  <img src="{{ post.image.url|slice:'4:' }}" width="500px" />
+  {% endif %}
+  <div class="content-text">
+    <h3>{% block title %} {{ object.title }} {% endblock title %}</h3>
+    <small
+      >Author: {{ post.author.first_name }} {{ post.author.last_name }} | Created:
+      {{ post.created_on }} | Last Updated: {{ post.updated_on }} - {{post.updated_on|naturaltime }}</small
+    >
+    <p>{{ object.content|linebreaks }}</p>
+    <a href="{% url 'home' %}">Return to feed &rarr;</a>
+  </div>
 </div>
-<a href="{% url 'home' %}">Return to feed &rarr;</a>
 {% endblock content %}
