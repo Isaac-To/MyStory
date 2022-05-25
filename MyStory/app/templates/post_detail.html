@@ -11,7 +11,9 @@
       {{post.updated_on|naturaltime }}</small
     >
     <p>{{ object.content|linebreaks }}</p>
-    <a href="{% url 'home' %}">Return to feed &rarr;</a>
+    <div class="buttonGroup">
+      <a class="linkButton" href="{% url 'home' %}">Return to feed &rarr;</a>
+    </div>
   </div>
 </div>
 {% endblock content %}

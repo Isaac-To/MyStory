@@ -14,7 +14,9 @@
         >
         {% if post.content|length > 200 %}
         <p>{{post.content|slice:":200"}}...</p>
-        <a href="{% url 'post_detail' post.slug  %}">View full post &rarr;</a>
+        <div class="buttonGroup">
+          <a class="linkButton" href="{% url 'post_detail' post.slug  %}">View full post &rarr;</a>
+        </div>
         {% else %}
         <p>{{post.content}}</p>
         {% endif %}
