@@ -1,5 +1,5 @@
 {% extends 'nav.html' %} {% block content %} {% load humanize %}
-<div>
+<div class = "card">
   {% if post.image %}
   <img src="{{ post.image.url|slice:'4:' }}" width="500px" />
   {% endif %}

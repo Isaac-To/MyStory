@@ -2,7 +2,7 @@
 <div>
   <div>
     {% for post in post_list %}
-    <div>
+    <div class = "card">
       {% if post.image %}
       <img src="{{ post.image.url|slice:'4:' }}"/>
       {% endif %}
@@ -12,7 +12,7 @@
           >Author: {{ post.author.first_name }} {{ post.author.last_name }} -
           {{post.updated_on|naturaltime}}</small
         >
-        <p>{{post.content|slice:":500"|linebreaks }}</p>
+        <p>{{post.content|slice:":200"|linebreaks }}</p>
         <a href="{% url 'post_detail' post.slug  %}"> View full post &rarr;</a>
       </div>
     </div>
