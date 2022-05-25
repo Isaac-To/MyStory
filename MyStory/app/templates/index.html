@@ -2,9 +2,9 @@
 <div>
   <div>
     {% for post in post_list %}
-    <div class = "card">
+    <div class="card">
       {% if post.image %}
-      <img src="{{ post.image.url|slice:'4:' }}"/>
+      <img src="{{ post.image.url|slice:'4:' }}" />
       {% endif %}
       <div class="content-text">
         <h3>{{ post.title }}</h3>

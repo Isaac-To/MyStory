@@ -13,12 +13,12 @@
   <body>
     <nav>
       <div class="nav-content">
-        <div class="logo" style="float: left"><a href = "{% url 'home' %}">Isaac</a></div>
+        <div class="logo" style="float: left">
+          <a href="{% url 'home' %}">Isaac</a>
+        </div>
       </div>
     </nav>
-    <div class = "content">
-      {% block content %} {% endblock content %}
-    </div>
+    <div class="content">{% block content %} {% endblock content %}</div>
     {% block returnupbtn %} {% include 'returnupbtn.html' %} {% endblock returnupbtn %}
   </body>
 </html>
