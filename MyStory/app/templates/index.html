@@ -12,8 +12,12 @@
           >Author: {{ post.author.first_name }} {{ post.author.last_name }} -
           {{post.updated_on|naturaltime}}</small
         >
-        <p>{{post.content|slice:":200"|linebreaks }}</p>
-        <a href="{% url 'post_detail' post.slug  %}"> View full post &rarr;</a>
+        {% if post.content|length > 200 %}
+        <p>{{post.content|slice:":200"}}...</p>
+        <a href="{% url 'post_detail' post.slug  %}">View full post &rarr;</a>
+        {% else %}
+        <p>{{post.content}}</p>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
