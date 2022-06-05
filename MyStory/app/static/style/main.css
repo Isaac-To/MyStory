@@ -66,10 +66,7 @@ img {
 }
 
 .content {
-  margin-left: 50%;
-  margin-right: 50%;
-  transform: translateX(-50%);
-  width: 60%;
+  width: 100%;
 }
 
 .content-text {
@@ -77,6 +74,11 @@ img {
 }
 
 .card {
+  margin-left: 50%;
+  margin-right: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
   margin-top: 2%;
 }
 
