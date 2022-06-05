@@ -13,12 +13,14 @@
           {{post.updated_on|naturaltime}}</small
         >
         {% if post.content|length > 200 %}
-        <p>{{post.content|slice:":200"}}...</p>
+        <p>{{post.content|slice:":200"|linebreaks}}...</p>
         <div class="buttonGroup">
-          <a class="linkButton" href="{% url 'post_detail' post.slug  %}">View full post &rarr;</a>
+          <a class="linkButton" href="{% url 'post_detail' post.slug  %}"
+            >View full post &rarr;</a
+          >
         </div>
         {% else %}
-        <p>{{post.content}}</p>
+        <p>{{post.content|linebreaks}}</p>
         {% endif %}
       </div>
     </div>

@@ -1,0 +1,31 @@
+body {
+  background-color: var(--bg-color);
+}
+
+nav {
+  background-color: var(--main-color);
+}
+
+h3 {
+    color: var(--accent-color);
+}
+
+.linkButton {
+  background-color: var(--accent-color);
+}
+
+.card {
+  background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--main-color);
+}
+
+#returntotop {
+  background-color: var(--accent-color);
+}
